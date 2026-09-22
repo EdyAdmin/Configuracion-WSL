@@ -1,15 +1,15 @@
-# ⚡ Modular Zsh Configuration (WSL / Ubuntu)
+# Configuración modular para ZSH (WSL / Ubuntu)
 
-Configuración modular y optimizada para Zsh orientada a desarrollo y productividad en entornos Linux/WSL. Transforma la línea de comandos integrando comportamiento interactivo moderno (estilo editor gráfico), atajos avanzados de edición y separación estricta entre configuraciones portables y rutas privadas del sistema.
+Configuración modular optimizada para Zsh orientada a desarrollo y productividad en entornos WSL/Linux. Transforma la línea de comandos integrando comportamiento interactivo moderno (estilo editor gráfico), atajos avanzados de edición y separación estricta entre configuraciones portables y rutas privadas del sistema.
 
 ---
 
-## 📌 PARTE 1: Novedades, Módulos y Funcionalidades Añadidas
+## 📌 Módulos y funcionalidades añadidas
 
-Esta configuración reorganiza la terminal en submódulos independientes ubicados en `~/.zsh_user/`, ofreciendo mayor orden, mantenimiento y nuevas funciones interactivas:
+Esta configuración reorganiza la terminal en submódulos independientes ubicados en `~/.zsh_user/`. Tengo implementada una funcionalidad similar al seleccionado con shift + flechas de PowerShell y tengo instalados GHC (para Haskell), Bat y AstroNvim. También tengo puestos algunos aliases y plugins interesantes.
 
-### 1. Arquitectura Modular y Privacidad
-* **`.zsh_aliases`**: Centraliza los atajos de comandos habituales (`g` para git, utilidades de terminal como `bat` o `eza`, navegación y gestión de sistema).
+### 1. Arquitectura modular
+* **`.zsh_aliases`**: Centraliza los atajos de comandos habituales (`c` para clear, utilidades de terminal como `bat`).
 * **`.zsh_widgets`**: Contiene funciones y widgets propios programados para el subsistema interactivo de Zsh (ZLE - Zsh Line Editor).
 * **`.zsh_keybinds`**: Mapeo completo de secuencias de escape y atajos de teclado.
 * **Aislamiento local (`.zsh_local/`)**: Directorio protegido mediante `.gitignore`. Permite definir rutas personales (unidades montadas como Google Drive, particiones Windows o credenciales) sin exponerlas al subir los dotfiles a GitHub.
@@ -39,3 +39,4 @@ sudo apt update && sudo apt install -y zsh git curl
 
 # Instalar Oh My Zsh (si no lo tienes aún)
 sh -c "$(curl -fsSL [https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh](https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh))"
+```
