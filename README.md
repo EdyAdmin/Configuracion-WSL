@@ -9,20 +9,20 @@ Configuración modular optimizada para Zsh orientada a desarrollo y productivida
 Esta configuración reorganiza la terminal en submódulos independientes ubicados en `~/.zsh_user/`. Tengo implementada una funcionalidad similar al seleccionado con shift + flechas de PowerShell y tengo instalados GHC (para Haskell), Bat y AstroNvim. También tengo puestos algunos aliases y plugins interesantes.
 
 ### 1. Arquitectura modular
-***`.zsh_aliases`**: Centraliza los atajos de comandos habituales (`c` para clear, utilidades de terminal como `bat`).
-***`.zsh_widgets`**: Contiene funciones y widgets propios programados para el subsistema interactivo de Zsh (ZLE - Zsh Line Editor).
-***`.zsh_keybinds`**: Mapeo completo de secuencias de escape y atajos de teclado.
-***Aislamiento local (`.zsh_local/`)**: Directorio protegido mediante `.gitignore` para definir rutas personales (unidades montadas como Google Drive, particiones Windows o credenciales).
+* **`.zsh_aliases`**: Centraliza los atajos de comandos habituales (`c` para clear, utilidades de terminal como `bat`).
+* **`.zsh_widgets`**: Contiene funciones y widgets propios programados para el subsistema interactivo de Zsh (ZLE - Zsh Line Editor).
+* **`.zsh_keybinds`**: Mapeo completo de secuencias de escape y atajos de teclado.
+* **Aislamiento local (`.zsh_local/`)**: Directorio protegido mediante `.gitignore` para definir rutas personales (unidades montadas como Google Drive, particiones Windows o credenciales).
 
-### 2. Selección interactiva de texto 
+### 2. Selección interactiva de texto
 A través del plugin `zsh-shift-select` y la integración en `.zsh_keybinds`, la terminal adopta la edición de texto propia de PowerShell:
-***`Shift + Flechas (Izquierda / Derecha)`**: Selecciona caracteres continuos directamente sobre la línea de comandos.
-***`Ctrl + Shift + Flechas (Izquierda / Derecha)`**: Selecciona palabras completas hacia adelante o hacia atrás.
+* **`Shift + Flechas (Izquierda / Derecha)`**: Selecciona caracteres continuos directamente sobre la línea de comandos.
+* **`Ctrl + Shift + Flechas (Izquierda / Derecha)`**: Selecciona palabras completas hacia adelante o hacia atrás.
 * Sustitución y borrado automático al escribir o pulsar retroceso sobre texto seleccionado.
 
 ### 3. Navegación y edición ágil
-*Integración fluida con editores modulares (como Neovim / AstroNvim) para manipular líneas sin salir del flujo de trabajo.
-***Atajo `reload`**: Ejecuta `daemon-reload`, remonta puntos de almacenamiento definidos en `/etc/fstab` y reinicia una sesión de Zsh completamente limpia (`exec zsh`) para agilizar un reinicio sin necesidad de cerrar la terminal.
+* Integración fluida con editores modulares (como Neovim / AstroNvim) para manipular líneas sin salir del flujo de trabajo.
+* **Atajo `reload`**: Ejecuta `daemon-reload`, remonta puntos de almacenamiento definidos en `/etc/fstab` y reinicia una sesión de Zsh completamente limpia (`exec zsh`) para agilizar un reinicio sin necesidad de cerrar la terminal.
 
 ---
 
@@ -39,8 +39,8 @@ git clone https://github.com/EdyAdmin/Configuracion-WSL.git ~/.zsh_user
 
 ---
 
-### 2. Instalar los plugins 
-Descarga los complementos externos dentro de la carpeta custom de Oh My Zsh (los plugins como `git` o `zsh-bat` ya vienen incluidos en el framework):
+### 2. Instalar los plugins
+Descarga los complementos externos dentro de la carpeta custom de Oh My Zsh (`git` ya viene incluido en el framework):
 
 ```bash
 # 1. Selección de texto con Shift
@@ -55,7 +55,7 @@ git clone https://github.com/kutsan/zsh-system-clipboard.git ${ZSH_CUSTOM:-~/.oh
 # 4. Resaltado de sintaxis
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-# 5. Integración con Bat (reemplazo moderno de cat)
+# 5. Integración con Bat
 git clone https://github.com/fdellwing/zsh-bat.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-bat
 
 # 6. Recordatorio de aliases
