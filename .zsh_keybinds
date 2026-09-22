@@ -1,0 +1,22 @@
+# This file contains all the keybinds added in ZSH by the user.
+
+# System keybinds
+
+# 1) Keybind that replaces the standard copy keybind
+bindkey '^[c' copy-region-as-kill
+bindkey -M shift-select '^[c' copy-region-as-kill
+
+# 2) Keybind that replaces the standard kill keybind
+bindkey '^[x' kill-region
+bindkey -M shift-select '^[x' kill-region
+
+# 3) Keybind that replaces the standard yank funcion with the yank-replace function
+bindkey '^[v' yank-replace
+bindkey -M shift-select '^[v' yank-replace
+
+# 4) Keybind that replaces the standard undo keybind
+bindkey '^[z' undo
+bindkey -M shift-select '^[z' undo
+
+# 5) Keybind that assigns the backward-delete-word
+bindkey '^H' backward-delete-word

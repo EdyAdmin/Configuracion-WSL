@@ -1,0 +1,11 @@
+# This file contains all the aliases added in ZSH by the user.
+
+# System aliases
+alias update="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && clear"
+alias reload="sudo systemctl daemon-reload && sudo mount -a && source ~/.zshrc && clear"
+
+# Accessibility aliases
+alias bat="batcat"
+alias h="ghci"
+alias n="nvim"
+alias c="clear"

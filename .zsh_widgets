@@ -1,0 +1,39 @@
+# This file contains all the widgets added in ZSH by the user.
+
+# System widgets
+
+# 1) Widget delete-region which deletes the region selected with zsh-shift-select without modifying the
+# kill-ring.
+function delete-region() {
+  # Figure out the start and end of the selection
+  local start=$(( MARK < CURSOR ? MARK : CURSOR ))
+  local end=$(( MARK < CURSOR ? CURSOR : MARK ))
+
+  # Manually rebuild the buffer, cutting out the selection
+  # Note: Zsh arrays are 1-based
+  BUFFER=${BUFFER[1,start]}${BUFFER[end+1,-1]}
+
+  # Move the cursor to where the selection began
+  CURSOR=$start
+
+  # Deactivate the highlighting
+  REGION_ACTIVE=0
+}
+
+# Register the function as a ZLE widget
+zle -N delete-region
+
+# 2) Widget that replaces selection on paste, or just pastes if no selection.
+function yank-replace() {
+  if (( REGION_ACTIVE )); then
+    # A region is active. Delete it without saving to the kill-ring
+    zle delete-region
+  fi
+  
+  # Now, paste (yank) the text from the kill-ring into the cleared space
+  zle yank
+}
+
+# Register the function as a ZLE widget
+zle -N yank-replace
+
